@@ -10,12 +10,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom , #1c2122, white);
+    background-image: url(https://img.freepik.com/premium-vector/seamless-geometric-pattern-authentic-arabian-style-vector-illustration_151170-1465.jpg?w=900);
 }
 nav{
     width: 100%;
-    height: 50px;
-    background-color: rgb(224, 214, 214,0.5);
+    height: 70px;
+    line-height: 70px;
+    background-color: rgb(159, 153, 105,0.3);
     display: flex;
     justify-content: space-between;
     position: sticky;
@@ -25,7 +26,7 @@ nav{
     
     
 }
-nav h1 a{
+.logo a{
     margin: 5px;
     text-decoration: none;
     color: #0197F6;
@@ -33,33 +34,35 @@ nav h1 a{
     font-size: 30px;
     letter-spacing: 2px;
     font-weight: bold;
+    margin-left: 20px;
     
 }
-nav ul li{
-    display: inline-block;
+nav li{
+    display: flex;
+    display: inline;
     margin: 10px;
 }
-nav ul li a{
+
+nav  li a{
+    height: 100%;
+    cursor: pointer;
     text-decoration: none;
     font-size: 19px;
-    color:#fff;
+    color:#ff0404;
     font-weight: bold;
     padding: 0px 25px;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-
 }
-nav ul li a:hover{
+nav  li a:hover{
     background-color: #fff;
-    color: rgb(221, 9, 9);
+    color: rgb(147, 150, 15);
     border-radius: 25px;
     box-shadow: 0px 0px 5px #A22522;
 }
 .contain{
-    
-    height: 80%;
-    width: 80%;
-    background: rgba(255, 255, 255, 0.1);
+    width: 965px;
+    background: rgba(0, 0, 0, 0.267);
     border-radius: 20px;
     overflow: hidden;
     padding: 15px;
@@ -71,12 +74,44 @@ nav ul li a:hover{
     font-size: 30px;
     letter-spacing: 1px;
 }
-
 img{
     filter: drop-shadow(6px 6px 5px rgb(0, 0, 0));
     
 }
-    
+.navbar-toggler{
+    display: none;
+    height: min-content;
+    margin: 18px 10px 0 0;
+    cursor: pointer;
+
+}
+.navbar-toggler .bar{
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background: black;
+    border-radius: 10%;
+    transition: 0.4s;
+}
+input{
+    display: none;
+}
+input:checked ~ nav ul {
+    transform: translateY(0);
+}
+input:checked ~ nav .navbar-toggler {
+    margin-top: 35px;
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(2){
+    display: none;
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
 ::selection{
     background-color: rgb(99, 42, 165);
     color: #fff;
@@ -90,7 +125,7 @@ img{
         width: 673px;
     }
 }
-@media (max-width:840px){
+@media (min-width:676px) and (max-width:848px){
     img{
         width: 540px;
         }
@@ -99,30 +134,54 @@ img{
         }
       nav ul li a{
         padding: 0px 5px;
-      }  
-      .contain h2{
+    }  
+    .contain h2{
         font-size:25px
-      }
-}
-@media (max-width:675px) {
-    nav{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
     }
+}
+@media (max-width:760px){
+    nav ul{
+        display: grid;
+        position: absolute;
+        background: rgb(224, 214, 214,0.5);
+        width: 100%;
+        top: 70px;
+        left: 0;
+        transform: translateY(-120%);
+        z-index: -2;
+        transition: 1s;
+    }
+    nav ul li{
+        padding-left: 35px;
+    }
+    nav ul li a{
+        display: block;
+        text-align: center;
+    }
+    nav ul li a:hover{
+        background-color: #A22522;
+        color: black;
+    }
+    .navbar-toggler{
+        display: grid !important ;
+    }
+}
+@media (min-width:501px) and (max-width:675px) {
     img{
-            width: 400px;
+        width: 400px;
     }
     .contain{
         width: 403px;
     }
     .contain h2{
-        font-size:20px
+        font-size:20px;
     }
 
 }
 @media (min-width:421px) and (max-width:500px) {
+    .logo a{
+        font-size: 26px;
+    }
     img{
         width: 340px;
     }
@@ -133,21 +192,34 @@ img{
         font-size: 15px;
     }
 }
-@media (min-width:381px) and (max-width:420px){
+@media (max-width:420px){
+    .logo a{
+        font-size: 21px;
+    }
     img{
-    width: 310px;
+    width: 288px;
     }
-    nav{
-        height: 95px;
-    }
-    nav ul li a{
-        padding: 0px 0px;
-    }  
+    
     .contain{
-        width: 313px;
+        width: 291px;
     }
     .contain h2{
         font-size: 15px;
     }
     
+}
+@media (max-width:320px){
+    .logo a{
+        font-size: 19px;
+        }
+    img{
+        width: 240px;
+    }
+    .contain{
+        width: 243px;
+    }
+    .contain h2{
+        font-size:13px;
+    }
+
 }
